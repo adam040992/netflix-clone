@@ -2,6 +2,10 @@ import React from 'react';
 import './Banner.scss';
 
 function Banner() {
+    const truncate = (string, n) => {
+        return string?.length > n ? string.substr(0, n-1) + '...' : string
+    }
+
     return (
         <header 
             className="banner" 
@@ -17,7 +21,29 @@ function Banner() {
                     <button className="banner__button">Play</button>
                     <button className="banner__button">My List</button>
                 </div>
-                <h1 className="banner__decription">This is a test description</h1>
+                <h1 className="banner__decription">
+                    {truncate(`This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description
+                    This is a test description`,200)}
+                </h1>
             </div>
 
             <div className="banner--fadeBottom" />
