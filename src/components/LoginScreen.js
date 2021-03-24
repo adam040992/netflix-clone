@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './LoginScreen.scss';
+import SignupScreen from './SignupScreen';
 
 function Login() {
+    const [signIn, setSignIn] = useState(false);
+
     return (
         <div className="loginScreen">
             <div className="loginScreen__background">
@@ -12,7 +15,7 @@ function Login() {
                 />
                 <button 
                     className="loginScreen__button"
-                    onClick={[]}
+                    onClick={() => setSignIn(true)}
                     >
                         Sign In
                 </button>
@@ -20,7 +23,11 @@ function Login() {
                 <div className="loginScreen__gradient" />
 
                 <div className="loginScreen__body">
-                    <>
+
+                    {signIn ? (
+                        <SignupScreen />
+                    ) : (
+                        <>
                         <h1>Unlimited films, TV programmes and more.</h1>
                         <h2>Watch anywhere. Cancel at any time.</h2>
                         <h3>
@@ -33,12 +40,16 @@ function Login() {
                                     type="email"
                                     placeholder="Email Address"
                                 />
-                                <button type="submit" className="loginScreen__getStarted">
+                                <button 
+                                    className="loginScreen__getStarted"
+                                    onClick={() => setSignIn(true)}
+                                >
                                     GET STARTED
                                 </button>
                             </form>
                         </div>
                     </>
+                    )}  
                 </div>
             </div>
         </div>
