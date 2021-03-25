@@ -9,7 +9,6 @@ import {
 import LoginScreen from './components/LoginScreen';
 import { auth } from './firebase';
 
-
 function App() {
   const user = null;
 
