@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { logout, selectUser } from '../features/userSlice';
 import './Nav.scss';
 
 function Nav() {
     const [show, handleShow] = useState(false);
+    // const dispatch = useDispatch(selectUser);
+
+    // const userLogout = (e) => {
+    //     e.preventDefault();
+    //     dispatch(logout);
+    // }
 
     const transitionNavBar = () => {
         if (window.scrollY > 100) {
@@ -29,6 +37,7 @@ function Nav() {
                 />
 
                 <img 
+                    // onClick={userLogout}
                     className="nav__avatar"
                     src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png" 
                     alt="Avatar"
